@@ -2,14 +2,18 @@
 node_modules/
 .pnp
 .pnp.js
+.yarn/
+.pnpm-store/
 
 # ── Next.js ───────────────────────────────────────────────────────────────────
 /.next/
 /out/
+next-env.d.ts
 
 # ── Build output ──────────────────────────────────────────────────────────────
 /build
 /dist
+.turbo/
 
 # ── Environment variables ─────────────────────────────────────────────────────
 # Never commit secrets — use Vercel's environment variables dashboard instead
@@ -25,19 +29,26 @@ node_modules/
 
 # ── TypeScript ────────────────────────────────────────────────────────────────
 *.tsbuildinfo
-next-env.d.ts
+
+# ── Linters / caches ──────────────────────────────────────────────────────────
+.eslintcache
+.stylelintcache
+.cache/
 
 # ── Debug / Logs ──────────────────────────────────────────────────────────────
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+lerna-debug.log*
 *.log
 
 # ── OS artifacts ──────────────────────────────────────────────────────────────
 .DS_Store
 Thumbs.db
 Desktop.ini
+$RECYCLE.BIN/
+ehthumbs.db
 
 # ── Editor / IDE ──────────────────────────────────────────────────────────────
 .idea/
@@ -48,12 +59,30 @@ Desktop.ini
 *.ntvs*
 *.njsproj
 *.sln
+*.sublime-workspace
+*.sublime-project
 
 # ── Certificates / Keys ───────────────────────────────────────────────────────
 *.pem
 *.key
 *.cert
 *.crt
+*.pfx
+*.p12
 
 # ── Test coverage ─────────────────────────────────────────────────────────────
 /coverage
+/.nyc_output
+
+# ── Claude Code (local tooling) ───────────────────────────────────────────────
+.claude/
+
+# ── Debug screenshots / scratch images ────────────────────────────────────────
+curr-view.png
+screenshot*.png
+screen-*.png
+debug-*.png
+
+# ── Bundle analysis ───────────────────────────────────────────────────────────
+/.analyze
+bundle-analysis.html
