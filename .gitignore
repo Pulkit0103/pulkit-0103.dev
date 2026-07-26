@@ -1,0 +1,59 @@
+# ── Dependencies ─────────────────────────────────────────────────────────────
+node_modules/
+.pnp
+.pnp.js
+
+# ── Next.js ───────────────────────────────────────────────────────────────────
+/.next/
+/out/
+
+# ── Build output ──────────────────────────────────────────────────────────────
+/build
+/dist
+
+# ── Environment variables ─────────────────────────────────────────────────────
+# Never commit secrets — use Vercel's environment variables dashboard instead
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+
+# ── Vercel ────────────────────────────────────────────────────────────────────
+.vercel
+
+# ── TypeScript ────────────────────────────────────────────────────────────────
+*.tsbuildinfo
+next-env.d.ts
+
+# ── Debug / Logs ──────────────────────────────────────────────────────────────
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# ── OS artifacts ──────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ── Editor / IDE ──────────────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# ── Certificates / Keys ───────────────────────────────────────────────────────
+*.pem
+*.key
+*.cert
+*.crt
+
+# ── Test coverage ─────────────────────────────────────────────────────────────
+/coverage
