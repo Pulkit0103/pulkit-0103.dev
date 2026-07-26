@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionWrapper from "./SectionWrapper";
 import SectionHeader from "./SectionHeader";
 import { siteConfig } from "@/config/site";
@@ -38,12 +39,25 @@ export default function About() {
         <div className="md:col-span-2 flex justify-center">
           <div className="relative group">
             {/* Rotating gradient ring */}
-            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-blue-400 via-violet-400 to-pink-400 opacity-40 blur-md group-hover:opacity-70 transition-opacity duration-500 animate-gradient bg-[length:200%_200%]" />
+            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-blue-400 via-violet-400 to-pink-400 opacity-50 blur-md group-hover:opacity-80 transition-opacity duration-500 animate-gradient bg-[length:200%_200%]" />
 
-            <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-2xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center overflow-hidden">
-              <span className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-blue-400 via-violet-400 to-pink-400 animate-gradient bg-[length:200%_200%] select-none">
-                {siteConfig.initials}
-              </span>
+            <div className="relative w-52 h-52 md:w-60 md:h-60 rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800">
+              {siteConfig.photo ? (
+                <Image
+                  src={siteConfig.photo}
+                  alt={siteConfig.name}
+                  fill
+                  sizes="(max-width: 768px) 208px, 240px"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  priority
+                />
+              ) : (
+                <div className="w-full h-full bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center">
+                  <span className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-blue-400 via-violet-400 to-pink-400 animate-gradient bg-[length:200%_200%] select-none">
+                    {siteConfig.initials}
+                  </span>
+                </div>
+              )}
             </div>
           </div>
         </div>

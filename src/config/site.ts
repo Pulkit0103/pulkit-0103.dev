@@ -20,7 +20,12 @@ export const siteConfig = {
   twitter: "",
 
   // ── Resume ────────────────────────────────────────────────────────────────
-  resumeUrl: "/Pulkit_Resume_June_2026.pdf",
+  // Google Drive share link (Anyone with the link can view)
+  resumeUrl: "https://drive.google.com/file/d/1EfBvRThGsXpCbm4xTp38kINZB9VCootD/view?usp=sharing",
+
+  // ── Profile photo ─────────────────────────────────────────────────────────
+  // Place image in /public and set the path here. Set to "" to fall back to initials.
+  photo: "/pulkit.png",
 
   // ── About ─────────────────────────────────────────────────────────────────
   about: {
