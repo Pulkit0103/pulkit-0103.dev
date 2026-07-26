@@ -37,9 +37,19 @@ export default function Navbar() {
       <nav className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
         <a
           href="#"
-          className="font-bold text-lg tracking-tight text-zinc-900 dark:text-white hover:text-blue-400 transition-colors"
+          aria-label={siteConfig.name}
+          className="group inline-flex items-center font-bold text-lg tracking-tight"
         >
-          {siteConfig.initials}
+          {siteConfig.name.split(" ")[0].split("").map((letter, i) => (
+            <span
+              key={i}
+              className="stagger-item inline-block text-zinc-900 dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-violet-400 group-hover:-translate-y-0.5 transition-[transform,color] duration-300"
+              style={{ animationDelay: `${i * 70}ms`, transitionDelay: `${i * 30}ms` }}
+            >
+              {letter}
+            </span>
+          ))}
+          <span className="ml-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity" />
         </a>
 
         <div className="hidden md:flex items-center gap-7">

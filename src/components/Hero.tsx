@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, Linkedin, Twitter, Mail, ArrowDown } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, ArrowDown, Sparkles } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
 export default function Hero() {
@@ -26,23 +26,45 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center px-6 pt-16 overflow-hidden">
-      {/* Background glow */}
+      {/* Animated background blobs */}
       <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-blue-500/5 blur-3xl" />
-        <div className="absolute top-1/2 left-1/3 w-[400px] h-[400px] rounded-full bg-violet-500/5 blur-3xl" />
+        <div className="absolute top-1/3 left-1/2 w-[600px] h-[600px] rounded-full bg-blue-500/10 blur-3xl animate-blob-1" />
+        <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] rounded-full bg-violet-500/10 blur-3xl animate-blob-2" />
+        <div className="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] rounded-full bg-pink-500/5 blur-3xl animate-blob-2" style={{ animationDelay: "3s" }} />
       </div>
 
-      {/* Pure CSS fade-up — no JS state, works even before React hydrates */}
+      {/* Grid overlay */}
+      <div
+        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.03] dark:opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, #60A5FA 1px, transparent 1px), linear-gradient(to bottom, #60A5FA 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
+        }}
+      />
+
       <div className="max-w-5xl mx-auto w-full animate-fade-up">
-        <p className="text-sm text-blue-400 font-mono mb-4 tracking-wide">
+        {/* Available badge */}
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 mb-6">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+          </span>
+          <span className="text-xs text-emerald-400 font-medium">Available for opportunities</span>
+        </div>
+
+        <p className="text-sm text-blue-400 font-mono mb-4 tracking-wide flex items-center gap-2">
+          <Sparkles size={14} />
           Hello, I&apos;m
         </p>
 
-        <h1 className="text-5xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-4 tracking-tight">
-          {siteConfig.name}
+        <h1 className="text-5xl md:text-7xl font-bold mb-4 tracking-tight">
+          <span className="text-zinc-900 dark:text-white">{siteConfig.name.split(" ")[0]} </span>
+          <span className="text-gradient-strong animate-gradient bg-[length:200%_auto]">
+            {siteConfig.name.split(" ").slice(1).join(" ")}
+          </span>
         </h1>
 
-        {/* Role cycling — client-side only, fine after hydration */}
         <div className="h-10 flex items-center mb-6">
           <AnimatePresence mode="wait">
             <motion.span
@@ -65,7 +87,7 @@ export default function Hero() {
         <div className="flex flex-wrap gap-4 mb-12">
           <a
             href="#projects"
-            className="px-6 py-3 rounded-xl bg-blue-500 hover:bg-blue-600 text-white font-medium transition-colors"
+            className="px-6 py-3 rounded-xl bg-blue-500 hover:bg-blue-600 text-white font-medium transition-all hover:shadow-lg hover:shadow-blue-500/25 hover:-translate-y-0.5"
           >
             View Projects
           </a>
@@ -74,7 +96,7 @@ export default function Hero() {
               href={siteConfig.resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 rounded-xl border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 hover:border-blue-400 hover:text-blue-400 font-medium transition-all"
+              className="px-6 py-3 rounded-xl border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 hover:border-blue-400 hover:text-blue-400 font-medium transition-all hover:-translate-y-0.5"
             >
               Download Resume
             </a>
@@ -89,7 +111,7 @@ export default function Hero() {
               target={href.startsWith("mailto") ? undefined : "_blank"}
               rel="noopener noreferrer"
               aria-label={label}
-              className="p-2.5 rounded-lg text-zinc-500 dark:text-zinc-400 hover:text-blue-400 transition-colors"
+              className="p-2.5 rounded-lg text-zinc-500 dark:text-zinc-400 hover:text-blue-400 hover:-translate-y-0.5 transition-all"
             >
               <Icon size={20} />
             </a>

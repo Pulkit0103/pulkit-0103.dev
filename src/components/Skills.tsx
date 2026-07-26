@@ -1,46 +1,45 @@
 import SectionWrapper from "./SectionWrapper";
 import SectionHeader from "./SectionHeader";
 import { siteConfig } from "@/config/site";
-
-const categoryColors: Record<string, string> = {
-  Languages:
-    "bg-violet-500/10 text-violet-500 dark:text-violet-400 border border-violet-500/20",
-  "Backend & Frameworks":
-    "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20",
-  Messaging:
-    "bg-pink-500/10 text-pink-600 dark:text-pink-400 border border-pink-500/20",
-  Databases:
-    "bg-orange-500/10 text-orange-600 dark:text-orange-400 border border-orange-500/20",
-  "Cloud & DevOps":
-    "bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/20",
-  Frontend:
-    "bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20",
-};
-
-const fallbackColor =
-  "bg-zinc-500/10 text-zinc-600 dark:text-zinc-400 border border-zinc-500/20";
+import { skillIcons } from "@/lib/icons";
+import { Code2 } from "lucide-react";
 
 export default function Skills() {
   return (
     <SectionWrapper id="skills">
-      <SectionHeader title="Skills" />
-      <div className="space-y-7">
+      <SectionHeader title="Skills" subtitle="Tools and technologies I work with" />
+      <div className="space-y-8">
         {Object.entries(siteConfig.skills).map(([category, items]) => (
           <div key={category}>
-            <h3 className="text-xs font-semibold text-zinc-400 uppercase tracking-widest mb-3">
+            <h3 className="text-xs font-semibold text-zinc-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+              <span className="h-px w-6 bg-blue-400/60" />
               {category}
             </h3>
-            <div className="flex flex-wrap gap-2">
-              {items.map((skill) => (
-                <span
-                  key={skill}
-                  className={`px-3 py-1.5 rounded-lg text-sm font-medium ${
-                    categoryColors[category] ?? fallbackColor
-                  }`}
-                >
-                  {skill}
-                </span>
-              ))}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+              {items.map((skill, i) => {
+                const iconData = skillIcons[skill];
+                return (
+                  <div
+                    key={skill}
+                    className="stagger-item group flex items-center gap-3 px-3 py-2.5 rounded-xl bg-white dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 hover:border-blue-400/50 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue-500/5 transition-all"
+                    style={{ animationDelay: `${i * 40}ms` }}
+                  >
+                    <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-zinc-100 dark:bg-zinc-800/50 group-hover:scale-110 transition-transform">
+                      {iconData ? (
+                        <iconData.Icon
+                          size={18}
+                          style={{ color: iconData.color }}
+                        />
+                      ) : (
+                        <Code2 size={16} className="text-zinc-400" />
+                      )}
+                    </div>
+                    <span className="text-sm text-zinc-700 dark:text-zinc-300 font-medium truncate">
+                      {skill}
+                    </span>
+                  </div>
+                );
+              })}
             </div>
           </div>
         ))}
