@@ -8,7 +8,7 @@ export default function Achievements() {
   const { competitive, certifications, scholarships } = siteConfig.achievements;
 
   return (
-    <SectionWrapper id="achievements" className="bg-zinc-100/60 dark:bg-zinc-900/30">
+    <SectionWrapper id="achievements" className="section-alt">
       <SectionHeader title="Achievements" subtitle="Recognition and milestones" />
 
       {/* Competitive Programming */}

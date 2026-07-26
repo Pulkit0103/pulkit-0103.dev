@@ -84,7 +84,8 @@ export const companyIcons: Record<string, CompanyLogo> = {
     type: "icon",
     Icon: SiAccenture,
     color: "#A100FF",
-    bg: "bg-[#A100FF]/10 border-[#A100FF]/30",
+    // Solid opaque bg so the timeline line doesn't show through the logo
+    bg: "bg-white dark:bg-zinc-900 border-[#A100FF]/40 shadow-sm shadow-[#A100FF]/10",
   },
   "Sehaj Solutions": {
     type: "letter",

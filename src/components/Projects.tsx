@@ -6,7 +6,7 @@ import { Github, ExternalLink, FolderGit2 } from "lucide-react";
 
 export default function Projects() {
   return (
-    <SectionWrapper id="projects" className="bg-zinc-100/60 dark:bg-zinc-900/30">
+    <SectionWrapper id="projects" className="section-alt">
       <SectionHeader title="Projects" subtitle="Things I've built" />
       <div className="grid sm:grid-cols-2 gap-5">
         {siteConfig.projects.map((project, i) => (

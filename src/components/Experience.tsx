@@ -6,13 +6,13 @@ import { MapPin, Calendar, Briefcase } from "lucide-react";
 
 export default function Experience() {
   return (
-    <SectionWrapper id="experience" className="bg-zinc-100/60 dark:bg-zinc-900/30">
+    <SectionWrapper id="experience" className="section-alt">
       <SectionHeader title="Experience" subtitle="Where I've worked and what I've built" />
       <div className="relative">
-        {/* Gradient timeline */}
-        <div className="absolute left-[19px] top-2 bottom-0 w-px bg-gradient-to-b from-blue-400/60 via-violet-400/40 to-transparent" />
+        {/* Gradient timeline — sits behind the logos so it doesn't cut through them */}
+        <div className="absolute left-[19px] top-2 bottom-0 w-px bg-gradient-to-b from-blue-400/60 via-violet-400/40 to-transparent z-0" />
 
-        <div className="space-y-6">
+        <div className="space-y-6 relative">
           {siteConfig.experience.map((exp, i) => {
             const logo = companyIcons[exp.company];
             return (
@@ -21,21 +21,21 @@ export default function Experience() {
                 className="pl-16 relative stagger-item"
                 style={{ animationDelay: `${i * 120}ms` }}
               >
-                {/* Company logo bubble */}
+                {/* Company logo bubble — opaque and above the timeline */}
                 {logo && logo.type === "icon" ? (
                   <div
-                    className={`absolute left-0 top-0 w-10 h-10 rounded-xl border flex items-center justify-center ${logo.bg}`}
+                    className={`absolute left-0 top-0 w-10 h-10 rounded-xl border-2 flex items-center justify-center z-10 ${logo.bg}`}
                   >
                     <logo.Icon size={20} style={{ color: logo.color }} />
                   </div>
                 ) : logo && logo.type === "letter" ? (
                   <div
-                    className={`absolute left-0 top-0 w-10 h-10 rounded-xl bg-gradient-to-br ${logo.from} ${logo.to} flex items-center justify-center text-white font-bold text-sm shadow-lg`}
+                    className={`absolute left-0 top-0 w-10 h-10 rounded-xl bg-gradient-to-br ${logo.from} ${logo.to} flex items-center justify-center text-white font-bold text-sm shadow-lg z-10`}
                   >
                     {logo.letter}
                   </div>
                 ) : (
-                  <div className="absolute left-0 top-0 w-10 h-10 rounded-xl bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center text-zinc-500">
+                  <div className="absolute left-0 top-0 w-10 h-10 rounded-xl bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center text-zinc-500 z-10">
                     <Briefcase size={18} />
                   </div>
                 )}

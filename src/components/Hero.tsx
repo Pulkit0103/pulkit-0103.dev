@@ -33,15 +33,8 @@ export default function Hero() {
         <div className="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] rounded-full bg-pink-500/5 blur-3xl animate-blob-2" style={{ animationDelay: "3s" }} />
       </div>
 
-      {/* Grid overlay */}
-      <div
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.03] dark:opacity-[0.05]"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, #60A5FA 1px, transparent 1px), linear-gradient(to bottom, #60A5FA 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
+      {/* Grid overlay — visible in both light and dark modes */}
+      <div className="pointer-events-none absolute inset-0 -z-10 hero-grid" />
 
       <div className="max-w-5xl mx-auto w-full animate-fade-up">
         {/* Available badge */}

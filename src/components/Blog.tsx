@@ -7,7 +7,7 @@ export default function Blog() {
   if (siteConfig.blog.length === 0) return null;
 
   return (
-    <SectionWrapper id="blog" className="bg-zinc-100/60 dark:bg-zinc-900/30">
+    <SectionWrapper id="blog" className="section-alt">
       <SectionHeader title="Writing" subtitle="Thoughts and technical articles" />
       <div className="space-y-3">
         {siteConfig.blog.map((post, i) => (

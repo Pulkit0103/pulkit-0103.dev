@@ -21,7 +21,7 @@ export default function Skills() {
                 return (
                   <div
                     key={skill}
-                    className="stagger-item group flex items-center gap-3 px-3 py-2.5 rounded-xl bg-white dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 hover:border-blue-400/50 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue-500/5 transition-all"
+                    className="stagger-item group light-shadow flex items-center gap-3 px-3 py-2.5 rounded-xl bg-white dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 hover:border-blue-400/50 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue-500/10 transition-all"
                     style={{ animationDelay: `${i * 40}ms` }}
                   >
                     <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-zinc-100 dark:bg-zinc-800/50 group-hover:scale-110 transition-transform">
