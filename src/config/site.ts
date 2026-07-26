@@ -16,7 +16,7 @@ export const siteConfig = {
   // ── Contact & Links ───────────────────────────────────────────────────────
   email: "girdhar.pulkit.2002@gmail.com",
   linkedin: "https://linkedin.com/in/your-linkedin-handle", // TODO: update with your LinkedIn URL
-  github: "https://github.com/pulkit-0103",
+  github: "https://github.com/Pulkit0103",
   twitter: "",
 
   // ── Resume ────────────────────────────────────────────────────────────────
@@ -110,7 +110,7 @@ export const siteConfig = {
       description:
         "This site — built with Next.js 15, Tailwind CSS, and Framer Motion. Fully config-driven: update a single file to change all content. Dark/light mode, scroll animations, auto-hiding sections.",
       tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-      github: "https://github.com/pulkit-0103/pulkit-0103.dev",
+      github: "https://github.com/Pulkit0103/pulkit-0103.dev",
       live: "https://pulkit-0103.dev",
     },
   ],
@@ -184,5 +184,5 @@ export const siteConfig = {
   }>,
 
   // ── Footer ────────────────────────────────────────────────────────────────
-  sourceRepo: "https://github.com/pulkit-0103/pulkit-0103.dev",
+  sourceRepo: "https://github.com/Pulkit0103/pulkit-0103.dev",
 };

@@ -6,19 +6,13 @@ import { siteConfig } from "@/config/site";
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
-  const [visible, setVisible] = useState(false);
   const roles = siteConfig.roles;
 
   useEffect(() => {
-    // Small delay so the CSS transition plays after mount
-    const show = setTimeout(() => setVisible(true), 80);
     const cycle = setInterval(() => {
       setRoleIndex((prev) => (prev + 1) % roles.length);
     }, 2500);
-    return () => {
-      clearTimeout(show);
-      clearInterval(cycle);
-    };
+    return () => clearInterval(cycle);
   }, [roles.length]);
 
   const socials = [
@@ -38,12 +32,8 @@ export default function Hero() {
         <div className="absolute top-1/2 left-1/3 w-[400px] h-[400px] rounded-full bg-violet-500/5 blur-3xl" />
       </div>
 
-      {/* Hero content — CSS transition, no Framer Motion dependency for initial paint */}
-      <div
-        className={`max-w-5xl mx-auto w-full transition-all duration-700 ease-out ${
-          visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        }`}
-      >
+      {/* Pure CSS fade-up — no JS state, works even before React hydrates */}
+      <div className="max-w-5xl mx-auto w-full animate-fade-up">
         <p className="text-sm text-blue-400 font-mono mb-4 tracking-wide">
           Hello, I&apos;m
         </p>
@@ -52,7 +42,7 @@ export default function Hero() {
           {siteConfig.name}
         </h1>
 
-        {/* Animated cycling role — Framer Motion only after mount */}
+        {/* Role cycling — client-side only, fine after hydration */}
         <div className="h-10 flex items-center mb-6">
           <AnimatePresence mode="wait">
             <motion.span
@@ -108,11 +98,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div
-        className={`absolute bottom-10 left-1/2 -translate-x-1/2 text-zinc-400 transition-opacity duration-500 delay-1000 ${
-          visible ? "opacity-100" : "opacity-0"
-        }`}
-      >
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-zinc-400 animate-fade-up-delay">
         <motion.div
           animate={{ y: [0, 6, 0] }}
           transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
