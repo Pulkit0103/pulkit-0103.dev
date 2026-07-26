@@ -11,7 +11,7 @@ export const siteConfig = {
   tagline: "Building scalable microservices and backend systems that solve real-world problems.",
 
   // Roles shown in the hero cycling animation
-  roles: ["Senior Software Engineer", "Backend & Cloud Architect", "Competitive Programmer"],
+  roles: ["Senior Software Engineer", "Backend & Cloud Architect", "Passionate Gamer"],
 
   // ── Contact & Links ───────────────────────────────────────────────────────
   email: "girdhar.pulkit.2002@gmail.com",
@@ -31,7 +31,7 @@ export const siteConfig = {
   about: {
     bio: [
       "I'm a Senior Software Engineer at Accenture, specializing in backend systems, microservices, and cloud-native architectures. I build scalable, production-grade solutions using Java, Spring Boot, and distributed messaging platforms.",
-      "Outside of work, I'm an avid competitive programmer — a CodeChef 4-Star, LeetCode Knight, and Codeforces Specialist — with a deep love for algorithms and problem-solving.",
+      "When I'm off the clock, I love watching sports — cricket, football, F1, and tennis — and unwinding with PC games. I'm endlessly curious about how backend systems work under the hood, and I enjoy building software and solving problems, especially through competitive programming.",
     ],
     location: "India",
     availability: "",
@@ -107,7 +107,7 @@ export const siteConfig = {
       description:
         "Decentralized lottery application using Solidity smart contracts on Ethereum/Polygon. Automates ticket purchases, winner selection, and prize distribution without intermediaries. Deployed on Polygon Mumbai Testnet with MetaMask wallet integration.",
       tech: ["Solidity", "React.js", "Polygon", "MetaMask", "Ethereum"],
-      github: "", // TODO: add your GitHub link
+      github: "https://github.com/Pulkit0103/Lottery-Dapp",
       live: "",
     },
     {
