@@ -27,9 +27,13 @@ import {
   SiCodeforces,
   SiGoogle,
   SiMeta,
+  SiRedis,
+  SiKeycloak,
+  SiApachemaven,
+  SiPrometheus,
 } from "react-icons/si";
 import { FaJava, FaDatabase, FaServer, FaCloud, FaAws } from "react-icons/fa";
-import { TbApi } from "react-icons/tb";
+import { TbApi, TbTopologyStar3 } from "react-icons/tb";
 import { GraduationCap, School } from "lucide-react";
 
 // ── Skill icon map ────────────────────────────────────────────────────────────
@@ -47,6 +51,12 @@ export const skillIcons: Record<string, { Icon: IconType; color: string }> = {
   "REST APIs": { Icon: TbApi, color: "#60A5FA" },
   "Apache Camel": { Icon: SiApache, color: "#D22128" },
   "Apache Kafka": { Icon: SiApachekafka, color: "#a1a1aa" },
+  "Spring Cloud Gateway": { Icon: SiSpring, color: "#6DB33F" },
+  Keycloak: { Icon: SiKeycloak, color: "#4D4D4D" },
+  Redis: { Icon: SiRedis, color: "#FF4438" },
+  Maven: { Icon: SiApachemaven, color: "#C71A36" },
+  Prometheus: { Icon: SiPrometheus, color: "#E6522C" },
+  "Distributed Systems": { Icon: TbTopologyStar3, color: "#60A5FA" },
 
   "IBM MQ": { Icon: FaServer, color: "#054ADA" },
   NoSQL: { Icon: FaDatabase, color: "#4DB33D" },

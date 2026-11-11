@@ -74,7 +74,7 @@ ehthumbs.db
 /coverage
 /.nyc_output
 
-# ── Claude Code (local tooling) ───────────────────────────────────────────────
+# ── Local tooling ─────────────────────────────────────────────────────────────
 .claude/
 
 # ── Debug screenshots / scratch images ────────────────────────────────────────

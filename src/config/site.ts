@@ -15,7 +15,7 @@ export const siteConfig = {
 
   // ── Contact & Links ───────────────────────────────────────────────────────
   email: "girdhar.pulkit.2002@gmail.com",
-  linkedin: "https://linkedin.com/in/your-linkedin-handle", // TODO: update with your LinkedIn URL
+  linkedin: "https://linkedin.com/in/pulkit-0103",
   github: "https://github.com/Pulkit0103",
   twitter: "",
 
@@ -102,6 +102,22 @@ export const siteConfig = {
 
   // ── Projects ──────────────────────────────────────────────────────────────
   projects: [
+    {
+      name: "Sentinel Gateway",
+      description:
+        "Zero-trust API security and traffic management platform built on Spring Cloud Gateway. Enforces a nine-layer pipeline — JWT/OAuth2 auth, RBAC, tenant isolation, WAF threat detection, Redis-backed token-bucket rate limiting, HMAC replay prevention — before requests reach downstream services. Ships with a Next.js admin dashboard, Kafka audit logging, and Helm-based Kubernetes deployment.",
+      tech: ["Java", "Spring Boot", "Spring Cloud Gateway", "Keycloak", "Redis", "PostgreSQL", "Apache Kafka", "Kubernetes"],
+      github: "https://github.com/Pulkit0103/sentinel-gateway",
+      live: "",
+    },
+    {
+      name: "NebulaKV",
+      description:
+        "Distributed, fault-tolerant key-value database written from scratch in Java. Implements an LSM storage engine with write-ahead logging, SSTables with Bloom filters, and tombstone compaction, plus consistent hashing, quorum reads/writes, gossip-based membership, read repair, and hinted handoff. Speaks both a binary wire protocol and RESP2, so redis-cli just works.",
+      tech: ["Java", "Distributed Systems", "Maven", "Prometheus", "Docker", "Kubernetes"],
+      github: "https://github.com/Pulkit0103/nebula-kv",
+      live: "",
+    },
     {
       name: "Blockchain Lottery DApp",
       description:
