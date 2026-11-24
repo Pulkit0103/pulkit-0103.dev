@@ -20,8 +20,9 @@ export const siteConfig = {
   twitter: "",
 
   // ── Resume ────────────────────────────────────────────────────────────────
-  // Google Drive share link (Anyone with the link can view)
-  resumeUrl: "https://drive.google.com/file/d/1EfBvRThGsXpCbm4xTp38kINZB9VCootD/view?usp=sharing",
+  // Built from resume/Pulkit_Girdhar_Resume.tex by .github/workflows/build-resume.yml
+  // and committed to /public. Edit the .tex, not the PDF.
+  resumeUrl: "/Pulkit_Girdhar_Resume.pdf",
 
   // ── Profile photo ─────────────────────────────────────────────────────────
   // Place image in /public and set the path here. Set to "" to fall back to initials.
@@ -33,7 +34,7 @@ export const siteConfig = {
       "I'm a Senior Software Engineer at Accenture, specializing in backend systems, microservices, and cloud-native architectures. I build scalable, production-grade solutions using Java, Spring Boot, and distributed messaging platforms.",
       "When I'm off the clock, I love watching sports — cricket, football, F1, and tennis — and unwinding with PC games. I'm endlessly curious about how backend systems work under the hood, and I enjoy building software and solving problems, especially through competitive programming.",
     ],
-    location: "India",
+    location: "Bangalore, India",
     availability: "",
   },
 
@@ -43,22 +44,23 @@ export const siteConfig = {
       company: "Accenture",
       role: "Senior Software Engineer",
       period: "Jun 2026 — Present",
-      location: "India",
+      location: "Bangalore, India",
       description: [
-        "Architected a scalable, concurrency-safe processing pipeline using Spring Boot and Azure Cosmos DB, guaranteeing exclusive single-worker processing for 100% of unique records and eliminating duplicate downstream processing.",
-        "Designed a dual-container persistence model for payload storage and distributed record ownership across multiple inbound payloads.",
-        "Developed REST APIs and implemented payload aggregation, transformation, and downstream integration workflows maintaining full backward compatibility.",
+        "Architected a concurrency-safe pipeline with Spring Boot and Azure Cosmos DB ingesting 100K+ payloads/day from 5 sources; a dual-container model with distributed record ownership guarantees 100% single-worker processing.",
+        "Built a fault-tolerant replay mechanism for pod restarts and prolonged API/DB outages, reprocessing stalled records after a configurable delay via scheduler or on-demand API, ensuring zero data loss.",
+        "Developed 10+ backward-compatible REST APIs for payload aggregation, transformation, and integration.",
       ],
     },
     {
       company: "Accenture",
       role: "Software Engineer",
       period: "Aug 2024 — Jun 2026",
-      location: "India",
+      location: "Bangalore, India",
       description: [
-        "Developed a Spring Boot microservice integrating IBM MQ to process legacy code-page-encoded messages using Apache Camel (Bindy) and Spring Mapper for standardized domain model transformation.",
-        "Designed and implemented a canary deployment strategy enabling depot-wise rollout of new processing flows with zero downtime.",
-        "Modernized SOAP and REST APIs from multiple legacy WAS applications into a unified platform; dockerized and migrated to Azure Kubernetes Service (AKS), achieving ~50% reduction in infrastructure and licensing costs.",
+        "Engineered a Spring Boot microservice consuming IBM MQ (JMS) legacy code-page messages, parsed with Apache Camel (Bindy) and mapped via MapStruct to domain models, processing 10M+ messages/day.",
+        "Designed a canary deployment strategy for depot-wise rollout across 700+ depots in phased waves, migrating shipments off legacy systems to the modernized system with zero downtime.",
+        "Consolidated SOAP and REST APIs from WAS-hosted legacy and vendor platforms into one RESTful service; containerized with Docker and migrated to Azure AKS, cutting infra/licensing costs by ~50%.",
+        "Built the internal Consignment Gateway Tool for self-service lookups, cutting manual queries by 90%.",
       ],
     },
     {
@@ -67,9 +69,8 @@ export const siteConfig = {
       period: "Apr 2024 — Aug 2024",
       location: "India",
       description: [
-        "Migrated an Angular application from Google Compute Engine VMs to fully managed Google Cloud Run, reducing operational overhead by 30% while improving scalability.",
-        "Designed Python scripts to transform and load data into BigQuery with DB2-compatible configurations as part of a large-scale data migration initiative.",
-        "Automated Python workflow execution via shell scripting, reducing manual intervention by 70%.",
+        "Migrated an Angular app from Compute Engine VMs to Google Cloud Run, cutting ops overhead by 30%.",
+        "Developed Python ETL scripts loading DB2-compatible data into BigQuery; automated them with shell scripting, cutting manual effort by 70%.",
       ],
     },
   ],
@@ -92,20 +93,30 @@ export const siteConfig = {
 
   // ── Skills ────────────────────────────────────────────────────────────────
   skills: {
-    Languages: ["Java", "C/C++", "SQL", "Solidity", "Python"],
-    "Backend & Frameworks": ["Spring Boot", "Microservices", "REST APIs", "Apache Camel", "Apache Kafka"],
-    Messaging: ["IBM MQ", "Apache Kafka", "NoSQL"],
-    Databases: ["PostgreSQL", "MySQL", "Azure Cosmos DB"],
-    "Cloud & DevOps": ["AWS", "Azure", "GCP", "Docker", "Kubernetes", "Git"],
-    Frontend: ["React.js", "Angular"],
+    Languages: ["Java", "Rust", "Python", "TypeScript", "JavaScript", "SQL", "C/C++"],
+    Backend: ["Spring Boot", "Spring Security", "Spring Data JPA", "Hibernate", "Spring Cloud", "Microservices", "REST", "SOAP"],
+    Messaging: ["Apache Kafka", "IBM MQ", "JMS", "Apache Camel"],
+    Frontend: ["React", "Next.js", "Angular", "Tailwind CSS"],
+    Databases: ["PostgreSQL", "MySQL", "Azure Cosmos DB", "Redis", "BigQuery"],
+    Testing: ["JUnit", "Mockito"],
+    "Cloud & DevOps": ["Azure Kubernetes Service (AKS)", "AWS", "GCP", "Docker", "Kubernetes", "Git", "GitHub Actions", "CI/CD"],
+    Concepts: ["Distributed Systems", "Event-Driven Architecture", "System Design", "Resilience4j"],
   },
 
   // ── Projects ──────────────────────────────────────────────────────────────
   projects: [
     {
+      name: "QueryLab",
+      description:
+        "Full stack PostgreSQL IDE with a Rust/Axum backend and Next.js frontend. Features a SQL editor with autocomplete, query plan visualizer, schema diff, and ER diagrams. Hardened with 2FA, encrypted credentials, rate limiting, and read-only query safety; CI via GitHub Actions.",
+      tech: ["Rust", "Axum", "Next.js", "TypeScript", "PostgreSQL", "GitHub Actions"],
+      github: "https://github.com/Pulkit0103/querylab",
+      live: "",
+    },
+    {
       name: "Sentinel Gateway",
       description:
-        "Zero-trust API security and traffic management platform built on Spring Cloud Gateway. Enforces a nine-layer pipeline — JWT/OAuth2 auth, RBAC, tenant isolation, WAF threat detection, Redis-backed token-bucket rate limiting, HMAC replay prevention — before requests reach downstream services. Ships with a Next.js admin dashboard, Kafka audit logging, and Helm-based Kubernetes deployment.",
+        "Zero-trust API security and traffic management platform built on Spring Cloud Gateway. Every request passes a 13-stage pipeline — JWT/OAuth2 auth, RBAC, tenant isolation, WAF threat detection, Redis-backed token-bucket rate limiting, HMAC replay prevention — before reaching downstream services. Load-tested at 1,000+ RPS with P99 under 200 ms. Ships with a Next.js admin dashboard, Kafka audit logging, and Helm-based Kubernetes deployment.",
       tech: ["Java", "Spring Boot", "Spring Cloud Gateway", "Keycloak", "Redis", "PostgreSQL", "Apache Kafka", "Kubernetes"],
       github: "https://github.com/Pulkit0103/sentinel-gateway",
       live: "",
@@ -174,7 +185,22 @@ export const siteConfig = {
       {
         name: "AWS Certified Solutions Architect",
         detail: "Associate",
-        link: "", // TODO: add certificate link
+        link: "https://www.credly.com/badges/f35f74d7-9305-4aaa-9107-bcb26bfacdaf/public_url",
+      },
+      {
+        name: "Java Full Stack AI-Native Engineer",
+        detail: "Accenture certification",
+        link: "",
+      },
+      {
+        name: "ACE Award",
+        detail: "Accenture",
+        link: "",
+      },
+      {
+        name: "Purple Promise Champion",
+        detail: "Accenture · FY26",
+        link: "",
       },
     ],
     scholarships: [

@@ -31,6 +31,12 @@ import {
   SiKeycloak,
   SiApachemaven,
   SiPrometheus,
+  SiRust,
+  SiSpringsecurity,
+  SiHibernate,
+  SiJunit5,
+  SiGithubactions,
+  SiGooglebigquery,
 } from "react-icons/si";
 import { FaJava, FaDatabase, FaServer, FaCloud, FaAws } from "react-icons/fa";
 import { TbApi, TbTopologyStar3 } from "react-icons/tb";
@@ -45,6 +51,25 @@ export const skillIcons: Record<string, { Icon: IconType; color: string }> = {
   Python: { Icon: SiPython, color: "#3776AB" },
   JavaScript: { Icon: SiJavascript, color: "#F7DF1E" },
   TypeScript: { Icon: SiTypescript, color: "#3178C6" },
+  Rust: { Icon: SiRust, color: "#CE422B" },
+  Axum: { Icon: SiRust, color: "#CE422B" },
+
+  "Spring Security": { Icon: SiSpringsecurity, color: "#6DB33F" },
+  "Spring Data JPA": { Icon: SiSpring, color: "#6DB33F" },
+  "Spring Cloud": { Icon: SiSpring, color: "#6DB33F" },
+  Hibernate: { Icon: SiHibernate, color: "#59666C" },
+  REST: { Icon: TbApi, color: "#60A5FA" },
+  SOAP: { Icon: TbApi, color: "#94A3B8" },
+  JMS: { Icon: FaServer, color: "#054ADA" },
+  JUnit: { Icon: SiJunit5, color: "#25A162" },
+  Mockito: { Icon: SiJunit5, color: "#25A162" },
+  BigQuery: { Icon: SiGooglebigquery, color: "#669DF6" },
+  "GitHub Actions": { Icon: SiGithubactions, color: "#2088FF" },
+  "CI/CD": { Icon: SiGithubactions, color: "#2088FF" },
+  "Azure Kubernetes Service (AKS)": { Icon: SiKubernetes, color: "#326CE5" },
+  "Event-Driven Architecture": { Icon: TbTopologyStar3, color: "#60A5FA" },
+  "System Design": { Icon: TbTopologyStar3, color: "#60A5FA" },
+  Resilience4j: { Icon: FaServer, color: "#F97316" },
 
   "Spring Boot": { Icon: SiSpring, color: "#6DB33F" },
   Microservices: { Icon: FaServer, color: "#F97316" },
