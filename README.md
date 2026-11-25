@@ -2,7 +2,7 @@
 
 My personal portfolio — built with Next.js 15, TypeScript, Tailwind CSS, and Framer Motion. Fully config-driven: every section is populated from a single file so the entire site can be updated without touching component code.
 
-**Live:** [pulkit-0103.dev](https://pulkit-0103.dev)/ [pulkit-0103.vercel.app](https://pulkit-0103.vercel.app)
+**Live:** [pulkit-0103.vercel.app](https://pulkit-0103.vercel.app)
 
 <p align="center">
   <img src="./docs/homepage.png" alt="Portfolio homepage screenshot" width="820" />
@@ -59,7 +59,8 @@ Everything user-facing lives in **`src/config/site.ts`**:
 | ------------------------ | ------------------------------------------------- |
 | `name`, `initials`, `tagline`, `roles` | Hero identity + cycling role animation |
 | `email`, `linkedin`, `github`, `twitter` | Social + contact links                 |
-| `resumeUrl`              | Path to PDF (in `/public`) or external URL       |
+| `resumeUrl`              | Resume download link — Google Drive (primary)    |
+| `resumeLocalUrl`         | Self-hosted fallback PDF, built by CI from `resume/` |
 | `photo`                  | Path to profile photo in `/public`               |
 | `about`                  | Bio paragraphs, location, availability badge     |
 | `experience`             | Work history (renders as timeline)               |

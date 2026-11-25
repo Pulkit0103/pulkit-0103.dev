@@ -74,8 +74,10 @@ ehthumbs.db
 /coverage
 /.nyc_output
 
-# ── Local tooling ─────────────────────────────────────────────────────────────
-.claude/
+# ── Secrets (never commit) ────────────────────────────────────────────────────
+github-token.txt
+*token*.txt
+.env*.local
 
 # ── Debug screenshots / scratch images ────────────────────────────────────────
 curr-view.png

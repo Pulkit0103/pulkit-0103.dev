@@ -20,9 +20,16 @@ export const siteConfig = {
   twitter: "",
 
   // ── Resume ────────────────────────────────────────────────────────────────
-  // Built from resume/Pulkit_Girdhar_Resume.tex by .github/workflows/build-resume.yml
-  // and committed to /public. Edit the .tex, not the PDF.
-  resumeUrl: "/Pulkit_Girdhar_Resume.pdf",
+  // Google Drive is the primary download source and takes priority over the
+  // self-hosted copy. Direct-download form (uc?export=download) so the button
+  // downloads the file instead of opening Drive's preview page.
+  // NOTE: keep the Drive file in sync with resume/Pulkit_Girdhar_Resume.tex.
+  resumeUrl: "https://drive.google.com/uc?export=download&id=1EfBvRThGsXpCbm4xTp38kINZB9VCootD",
+
+  // Fallback: built from resume/Pulkit_Girdhar_Resume.tex by
+  // .github/workflows/build-resume.yml and committed to /public.
+  // Set resumeUrl to this value to serve the self-hosted PDF instead.
+  resumeLocalUrl: "/Pulkit_Girdhar_Resume.pdf",
 
   // ── Profile photo ─────────────────────────────────────────────────────────
   // Place image in /public and set the path here. Set to "" to fall back to initials.
@@ -143,7 +150,7 @@ export const siteConfig = {
         "This site — built with Next.js 15, Tailwind CSS, and Framer Motion. Fully config-driven: update a single file to change all content. Dark/light mode, scroll animations, auto-hiding sections.",
       tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
       github: "https://github.com/Pulkit0103/pulkit-0103.dev",
-      live: "https://pulkit-0103.dev",
+      live: "https://pulkit-0103.vercel.app",
     },
   ],
 
