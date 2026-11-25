@@ -24,7 +24,7 @@ export const siteConfig = {
   // self-hosted copy. Direct-download form (uc?export=download) so the button
   // downloads the file instead of opening Drive's preview page.
   // NOTE: keep the Drive file in sync with resume/Pulkit_Girdhar_Resume.tex.
-  resumeUrl: "https://drive.google.com/uc?export=download&id=1EfBvRThGsXpCbm4xTp38kINZB9VCootD",
+  resumeUrl: "https://drive.google.com/uc?export=download&id=1tntSncIS3MZzpNmLvuJUuuDknPzcO2-S",
 
   // Fallback: built from resume/Pulkit_Girdhar_Resume.tex by
   // .github/workflows/build-resume.yml and committed to /public.
